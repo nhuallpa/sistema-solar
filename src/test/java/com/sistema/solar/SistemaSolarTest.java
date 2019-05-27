@@ -20,9 +20,9 @@ public class SistemaSolarTest {
 		
 		SistemaSolar sistema = new SistemaSolar(sol, ferengi, betasoide, vulcano);
 		
-		Periodo periodo = sistema.getPeriodo();
+		sistema.actualizarEstado();
 		
-		assertEquals(Periodo.SEQUIA, periodo);
+		assertEquals(Periodo.SEQUIA, sistema.getEstado().getPeriodo());
 	}
 	
 	@Test
@@ -35,9 +35,9 @@ public class SistemaSolarTest {
 		
 		SistemaSolar sistema = new SistemaSolar(sol, ferengi, betasoide, vulcano);
 		
-		Periodo periodo = sistema.getPeriodo();
+		sistema.actualizarEstado();
 		
-		assertEquals(Periodo.LLUVIOSO, periodo);
+		assertEquals(Periodo.LLUVIOSO, sistema.getEstado().getPeriodo());
 	}
 	
 	@Test

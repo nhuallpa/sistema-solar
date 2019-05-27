@@ -7,6 +7,8 @@ import com.sistema.solar.math.Triangulo2D;
 
 public class SistemaSolar {
 
+	private int nroDia;
+	private EstadoSistemaSolar estado;
 	private Planeta sol;
 	private Planeta ferengi;
 	private Planeta betasoide;
@@ -14,10 +16,12 @@ public class SistemaSolar {
 	
 	public SistemaSolar(Planeta sol, Planeta ferengi, Planeta betasoide, Planeta vulcano) {
 		super();
+		this.nroDia = 0;
 		this.sol = sol;
 		this.ferengi = ferengi;
 		this.betasoide = betasoide;
 		this.vulcano = vulcano;
+		this.actualizarEstado();
 	}
 
 	public SistemaSolar() {
@@ -55,9 +59,22 @@ public class SistemaSolar {
 	public void setSol(Planeta sol) {
 		this.sol = sol;
 	}
+	public int getNroDia() {
+		return nroDia;
+	}
+	public void setNroDia(int nroDia) {
+		this.nroDia = nroDia;
+	}
 
+	public EstadoSistemaSolar getEstado() {
+		return estado;
+	}
 
-	public Periodo getPeriodo() {
+	public void setEstado(EstadoSistemaSolar estado) {
+		this.estado = estado;
+	}
+
+	public void actualizarEstado() {
 
 		Recta recta = new Recta();
 		Periodo periodo = Periodo.NINGUNO;
@@ -78,15 +95,23 @@ public class SistemaSolar {
 							this.getVulcano().getPunto());
 			
 			if (triangulo.contiene(this.getSol().getPunto())) {
-				return Periodo.LLUVIOSO;
+				periodo = Periodo.LLUVIOSO;
 			}
 		}
-		return periodo;
+		this.estado = new EstadoSistemaSolar(this.nroDia, periodo, 1);
 	}
+	
+	
 
 	public void sumarCantidadDias(int nroDias) {
 		this.getBetasoide().avanzar(nroDias);
 		this.getVulcano().avanzar(nroDias);
 		this.getFerengi().avanzar(nroDias);
+		this.nroDia += nroDias;
+	}
+
+	public void avanzarUnDia() {
+		this.sumarCantidadDias(1);
+		this.actualizarEstado();
 	}
 }
