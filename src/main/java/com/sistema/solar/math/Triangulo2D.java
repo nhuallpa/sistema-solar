@@ -55,6 +55,10 @@ public class Triangulo2D {
 		return Math.abs((punto1.getX()*(punto2.getY()-punto3.getY()) 
 						+ punto2.getX()*(punto3.getY()-punto1.getY())
 						+ punto3.getX()*(punto1.getY()-punto2.getY()))/2.0); 
+	}
+
+	public double calcularArea() {
+		return area(this.getPuntoA(), this.getPuntoB(), this.getPuntoC());
 	} 
 	
 }

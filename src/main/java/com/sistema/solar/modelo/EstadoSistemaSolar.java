@@ -1,12 +1,26 @@
 package com.sistema.solar.modelo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "sistema_solar")
 public class EstadoSistemaSolar {
 
-	private int nroDia;
+	@Id
+	@Column(name = "dia")
+	private long nroDia;
+	
 	private String periodo;
 	private long intensidad;
 	
-	public EstadoSistemaSolar(int nroDia, Periodo periodo, long intencidad) {
+	public EstadoSistemaSolar() {
+		super();
+	}
+	
+	public EstadoSistemaSolar(long nroDia, Periodo periodo, long intencidad) {
 		super();
 		this.nroDia = nroDia;
 		this.periodo = periodo.name();
@@ -21,10 +35,10 @@ public class EstadoSistemaSolar {
 		this.intensidad = intensidad;
 	}
 
-	public int getNroDia() {
+	public long getNroDia() {
 		return nroDia;
 	}
-	public void setNroDia(int nroDia) {
+	public void setNroDia(long nroDia) {
 		this.nroDia = nroDia;
 	}
 	

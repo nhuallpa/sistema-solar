@@ -22,7 +22,7 @@ public class SistemaSolarTest {
 		
 		sistema.actualizarEstado();
 		
-		assertEquals(Periodo.SEQUIA, sistema.getEstado().getPeriodo());
+		assertEquals(Periodo.SEQUIA.name(), sistema.getEstado().getPeriodo());
 	}
 	
 	@Test
@@ -37,7 +37,7 @@ public class SistemaSolarTest {
 		
 		sistema.actualizarEstado();
 		
-		assertEquals(Periodo.LLUVIOSO, sistema.getEstado().getPeriodo());
+		assertEquals(Periodo.LLUVIOSO.name(), sistema.getEstado().getPeriodo());
 	}
 	
 	@Test

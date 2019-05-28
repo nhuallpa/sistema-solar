@@ -76,6 +76,7 @@ public class SistemaSolar {
 
 	public void actualizarEstado() {
 
+		long intensidad = 1;
 		Recta recta = new Recta();
 		Periodo periodo = Periodo.NINGUNO;
 		
@@ -96,9 +97,10 @@ public class SistemaSolar {
 			
 			if (triangulo.contiene(this.getSol().getPunto())) {
 				periodo = Periodo.LLUVIOSO;
+				intensidad = Math.round(triangulo.calcularArea());
 			}
 		}
-		this.estado = new EstadoSistemaSolar(this.nroDia, periodo, 1);
+		this.estado = new EstadoSistemaSolar(this.nroDia, periodo, intensidad);
 	}
 	
 	
