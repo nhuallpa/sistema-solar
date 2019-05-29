@@ -1,7 +1,7 @@
 # Prediccion del clima de un sistema solar
 
-_Mediante un proceso batch se simula la orbita de tres planetas durante 10 años. En base ciertos criterios de posicion de los planetas y el sol se determinan el clima e intensidad.
-Se expone una REST API para consultar el estado del clima por cada dia y un informe._
+_Mediante un **Job** se simula la orbita de tres planetas durante 10 años. En base ciertos criterios de posicion de los planetas y el sol se determinan el clima e intensidad._
+_Se expone una **REST API** para consultar el estado del clima por cada dia y un informe._
 
 ## Comenzando 🚀
 
@@ -74,10 +74,10 @@ _Herramientas utilizadas en el proyecto_
 
 * [Spring Boot](https://spring.io/projects/spring-boot) - El framework web usado
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [Heroku] (https://www.heroku.com/) - Cloud Application Platform
+* [Heroku](https://www.heroku.com/) - Cloud Application Platform
 
 ## Autores ✒️
 
 
-* **Huallpa Nestor** - *Trabajo Inicial* - [nhuallpa](https://github.com/nhuallpa)
+* **Huallpa Nestor** - *Trabajo Inicial* - [nhuallpa](https://www.linkedin.com/in/nestor-huallpa-7239b011)
 
