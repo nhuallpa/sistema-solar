@@ -61,6 +61,12 @@ _El deploy es realizado en un cuenta de heroku con el siguiente comando_
 ```
 git push heroku master
 ```
+_Para verificar los servicios, se exponen los siguiente recursos_
+
+```
+https://solar-meli.herokuapp.com/clima?dia=75
+https://solar-meli.herokuapp.com/informe
+```
 
 ## Construido con 🛠️
 
