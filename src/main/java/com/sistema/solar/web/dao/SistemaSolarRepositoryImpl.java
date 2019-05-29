@@ -1,5 +1,7 @@
 package com.sistema.solar.web.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -7,6 +9,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sistema.solar.modelo.EstadoSistemaSolar;
 import com.sistema.solar.modelo.Periodo;
 
 @Repository
@@ -23,10 +26,14 @@ public class SistemaSolarRepositoryImpl implements SistemaSolarRepositoryCustom 
 		return ((Number)query.getSingleResult()).intValue();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public Integer consultarDiaLluviaIntenso() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<EstadoSistemaSolar> consultarDiasLluviaIntenso() {
+		Query query = em.createNativeQuery("SELECT s.* FROM sistema_solar s WHERE s.intensidad = "
+				+ "(SELECT MAX(ss.intensidad) FROM sistema_solar ss where ss.periodo = :periodo )", EstadoSistemaSolar.class);
+		query.setParameter("periodo", Periodo.LLUVIOSO.name());
+		List<EstadoSistemaSolar> resultList = query.getResultList();
+		return resultList;
 	}
 
 }

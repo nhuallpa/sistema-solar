@@ -14,11 +14,17 @@ import com.sistema.solar.modelo.Planeta;
 import com.sistema.solar.modelo.Sentido;
 import com.sistema.solar.modelo.SistemaSolar;
 
+/***
+ * Item reader custom para el JOB sistema solar.
+ * Inicializa el estado inicial del sistema solar en memoria
+ * calculando el estado de todos los dias.
+ * @author nestor
+ *
+ */
 public class SistemaSolarItemReader implements ItemReader<EstadoSistemaSolar>{
 
 	private static final Logger log = LoggerFactory.getLogger(JobCompletionNotificationListener.class);
 
-	
 	private int indiceSiguienteEstado;
 	private SistemaSolar sistemaSolar;
 	private static int CANT_ANIOS = 10;

@@ -4,7 +4,11 @@ import java.awt.geom.Point2D;
 
 import com.sistema.solar.math.Recta;
 import com.sistema.solar.math.Triangulo2D;
-
+/**
+ * Sistema solar que contiene los planetas Ferengi, Vetasoide, Vulcano y un Sol
+ * @author nestor
+ *
+ */
 public class SistemaSolar {
 
 	private int nroDia;

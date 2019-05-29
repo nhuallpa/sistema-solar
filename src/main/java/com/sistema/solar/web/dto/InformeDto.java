@@ -1,11 +1,19 @@
 package com.sistema.solar.web.dto;
 
+import java.util.List;
+
+import com.sistema.solar.modelo.EstadoSistemaSolar;
+
+/**
+ * @author nestor
+ *
+ */
 public class InformeDto {
 
 	private int periodosSequia;
 	private int periodosLluvia;
-	private int diaDeLluviaIntensa;
 	private int periodosOptimos;
+	private List<EstadoSistemaSolar> diasDeLluviaIntensa;
 	
 	public int getPeriodosSequia() {
 		return periodosSequia;
@@ -19,17 +27,17 @@ public class InformeDto {
 	public void setPeriodosLluvia(int periodosLluvia) {
 		this.periodosLluvia = periodosLluvia;
 	}
-	public int getDiaDeLluviaIntensa() {
-		return diaDeLluviaIntensa;
-	}
-	public void setDiaDeLluviaIntensa(int diaDeLluviaIntensa) {
-		this.diaDeLluviaIntensa = diaDeLluviaIntensa;
-	}
 	public int getPeriodosOptimos() {
 		return periodosOptimos;
 	}
 	public void setPeriodosOptimos(int periodosOptimos) {
 		this.periodosOptimos = periodosOptimos;
+	}
+	public List<EstadoSistemaSolar> getDiasDeLluviaIntensa() {
+		return diasDeLluviaIntensa;
+	}
+	public void setDiasDeLluviaIntensa(List<EstadoSistemaSolar> diasDeLluviaIntensa) {
+		this.diasDeLluviaIntensa = diasDeLluviaIntensa;
 	}
 	
 }

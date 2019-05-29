@@ -1,7 +1,11 @@
 package com.sistema.solar.math;
 
 import java.awt.geom.Point2D;
-
+/**
+ * Modela un triangulo 2D en base a tres puntos en coordenadas cartesianas.
+ * @author nestor
+ *
+ */
 public class Triangulo2D {
 
 	private Point2D puntoA; 

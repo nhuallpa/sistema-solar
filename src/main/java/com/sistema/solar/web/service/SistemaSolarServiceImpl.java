@@ -33,6 +33,7 @@ public class SistemaSolarServiceImpl implements SistemaSolarService {
 		informe.setPeriodosSequia(sistemaSolarRepository.consultarCantidadPeriodos(Periodo.SEQUIA));
 		informe.setPeriodosLluvia(sistemaSolarRepository.consultarCantidadPeriodos(Periodo.LLUVIOSO));
 		informe.setPeriodosOptimos(sistemaSolarRepository.consultarCantidadPeriodos(Periodo.OPTIMO));
+		informe.setDiasDeLluviaIntensa(sistemaSolarRepository.consultarDiasLluviaIntenso());
 		return informe;
 	}
 
