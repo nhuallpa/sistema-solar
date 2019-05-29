@@ -15,7 +15,6 @@ import com.sistema.solar.modelo.Periodo;
 @Component
 public class JobCompletionNotificationListener extends JobExecutionListenerSupport {
 
-
 	private static final Logger log = LoggerFactory.getLogger(JobCompletionNotificationListener.class);
 
 	private final JdbcTemplate jdbcTemplate;

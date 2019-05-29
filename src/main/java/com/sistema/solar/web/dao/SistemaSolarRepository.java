@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.sistema.solar.modelo.EstadoSistemaSolar;
 
 @Repository
-public interface SistemaSolarRepository extends JpaRepository<EstadoSistemaSolar, Long> {
+public interface SistemaSolarRepository extends JpaRepository<EstadoSistemaSolar, Long>, SistemaSolarRepositoryCustom{
 
 }
